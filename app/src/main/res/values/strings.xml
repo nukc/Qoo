@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Scanner</string>
+
+    <string name="select_image">Select image</string>
+    <string name="select_image_done">Done</string>
+    <string name="select_up_to_num">Select up to %d</string>
+    <string name="back">Back</string>
+    <string name="error_no_video_activity">No App found supporting video preview</string>
+    <string name="tils_select_image_need_read_image_permission">Select image need storage permission to read images</string>
 </resources>

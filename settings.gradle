@@ -1,3 +1,4 @@
+include ':permissionrer'
 include ':scanner'
 include ':app'
 rootProject.name = "Qoo"

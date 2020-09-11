@@ -1,4 +1,4 @@
-package com.github.nukc.scanner
+package com.github.nukc.demo
 
 import org.junit.Test
 

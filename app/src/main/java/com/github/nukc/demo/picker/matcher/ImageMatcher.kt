@@ -1,41 +1,12 @@
-## Qoo
+package com.github.nukc.demo.picker.matcher
 
-文件扫描，可通过 ``Path`` 或 ``Uri`` 。
+import android.content.ContentUris
+import android.database.Cursor
+import android.net.Uri
+import android.provider.MediaStore
+import com.github.nukc.demo.picker.model.ImageItem
+import com.github.nukc.scanner.matcher.BaseUriMatcher
 
-主要是通过实现 ``BasePathMatcher`` 或 ``BaseUriMatcher``。
-
-Image Picker Demo:
-<img src="https://raw.githubusercontent.com/nukc/Qoo/master/art/image_picker.png">
-
-
-#### 用法示例：
-
-```kotlin
-viewModelScope.launch {
-	val fileBox = FileScanner.build(context)
-    	.scan(ImageMatcher())
-    	.scan(ApkMatcher())
-    	.scan(InvalidImageMatcher(), InvalidVideoMatcher())
-    	.setScanListener(..)
-        .start()
-}
-```
-
-Scan Listener: 
-
-```kotlin
-interface OnScanListener {
-    fun onScanStart()
-
-    fun onScanning(item: BaseItem)
-
-    fun onScanEnd()
-}
-```
-
-Matcher eg:
-
-```kotlin
 /**
  * image matcher, eg: jpg, gif, png
  * @author Nukc.
@@ -95,13 +66,5 @@ open class ImageMatcher : BaseUriMatcher<ImageItem>() {
             MediaStore.Files.FileColumns.BUCKET_DISPLAY_NAME
         )
     }
+
 }
-```
-
-
-
-### TODO:
-
-* [x] Demo
-* [x] Image Picker
-
