@@ -1,11 +1,33 @@
 ## Qoo
 
+> Scanner
+
 文件扫描，可通过 ``Path`` 或 ``Uri`` 。
 
 主要是通过实现 ``BasePathMatcher`` 或 ``BaseUriMatcher``。
 
 Image Picker Demo:
-<img src="https://raw.githubusercontent.com/nukc/Qoo/master/art/image_picker.png">
+
+<img src="https://raw.githubusercontent.com/nukc/Qoo/master/art/image_picker.png" width="300px">
+
+> PermissionRer
+
+权限请求
+
+```kotlin
+PermissionRer.with(activity)
+    .request(Manifest.permission.READ_EXTERNAL_STORAGE)
+    .subscribe { granted, permissions ->
+        if (granted) {
+            activity.startActivityForResult(
+                Intent(activity, ImagePickerActivity::class.java),
+                REQUEST_CODE
+            )
+        } else if (permissions[0].shouldShowRequestPermissionRationale) {
+            Toast.makeText(activity, R.string.tils_select_image_need_read_image_permission, Toast.LENGTH_SHORT).show()
+        }
+    }
+```
 
 
 #### 用法示例：
