@@ -1,5 +1,10 @@
 ## Qoo
 
+```groovy
+implementation 'com.github.nukc.permissionrer:permissionrer:1.0'
+
+```
+
 > Scanner
 
 文件扫描，可通过 ``Path`` 或 ``Uri`` 。
